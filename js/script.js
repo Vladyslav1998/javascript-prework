@@ -1,9 +1,14 @@
-function printMessage(msg){
-   let div=document.createElement('div');
-   div.innerHTML=msg;
-   document.getElementById('message').appendChild(div);
+function printMessage(msg) {
+   let div = document.createElement('div');
+   div.innerHTML = msg;
+   document.getElementById('messages').appendChild(div);
 }
 
-function printMessages(){
-   document.getElementById('messages').innerHTML='';
+function clearMessages() {
+   document.getElementById('messages').innerHTML = '';
 }
+
+let computerMove = 'kamień';
+let playerMove = 'papier';
+printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
+
