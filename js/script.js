@@ -8,21 +8,22 @@ function clearMessages() {
    document.getElementById('messages').innerHTML = '';
 }
 
-let computerMove = 'kamień';
+let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-let playerMove = 'papier';
+console.log('Wylosowana liczba to; ' + randomNumber);
 
-printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
+let computerMove = 'nieznany ruch';
 
-let randomFraction = Math.random();
+if (randomNumber == 1){
+   computerMove = 'kamień'
+}
 
-printMessage('Wylosowany ułamek to: ' + randomFraction);
+else if (randomNumber == 2){
+   computerMove = 'papier';
+}
 
-let calculation = randomFraction * 3 + 1;
+else if (randomNumber == 3){
+   computerMove = 'nożyce';
+}
 
-printMessage('Ułamek to: ' + calculation);
-
-let randomNumber = Math.floor(calculation);
-
-printMessage('Cały ułamek to: ' + randomNumber);
-
+printMessage('Mój ruch to: ' + computerMove);
