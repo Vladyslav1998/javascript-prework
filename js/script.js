@@ -1,7 +1,7 @@
-function playGame(playerInput) {
+const playGame = function(playerInput) {
    clearMessages();
 
-   function printMessage(msg) {
+   const printMessage = function(msg) {
    let div = document.createElement('div');
    div.innerHTML = msg;
    document.getElementById('messages').appendChild(div);
@@ -11,7 +11,7 @@ function playGame(playerInput) {
       document.getElementById('messages').innerHTML = '';
    }
 
-   function getMoveName(MoveId) {
+   const getMoveName = function(MoveId) {
       if (MoveId == 1) {
          return 'kamień';
       }
@@ -30,7 +30,7 @@ function playGame(playerInput) {
       }
    }
 
-   function displayResult(ComputerMove, PlayerMove) {
+   const displayResult = function(ComputerMove, PlayerMove) {
       console.log('moves:',ComputerMove, PlayerMove);
 
       if (ComputerMove == 'kamień' && PlayerMove == 'kamień') {
@@ -66,11 +66,11 @@ function playGame(playerInput) {
    }
    // Computer move
 
-   let randomNumber = Math.floor(Math.random() * 3 + 1);
+   const randomNumber = Math.floor(Math.random() * 3 + 1);
 
    console.log('Wylosowana liczba to; ' + randomNumber);
 
-   let ComputerMove = getMoveName(randomNumber);
+   const ComputerMove = getMoveName(randomNumber);
 
    printMessage('Ruch komputera to: ' + ComputerMove);
 
@@ -80,7 +80,7 @@ function playGame(playerInput) {
 
    console.log('Gracz wpisał :' + playerInput);
 
-   let PlayerMove = getMoveName(playerInput);
+   const PlayerMove = getMoveName(playerInput);
 
    printMessage('Mój ruch to: ' + PlayerMove);
 
